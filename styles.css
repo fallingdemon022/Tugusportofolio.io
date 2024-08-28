@@ -1,0 +1,145 @@
+/* Background untuk seluruh situs */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    position: relative;
+    overflow-x: hidden;
+    /* Menghindari scrollbar horizontal */
+}
+
+/* Background image di layer paling belakang */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/Image1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.7;
+    /* Transparansi gambar agar tidak terlalu dominan */
+}
+
+/* Styling navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* About Me Section */
+.about-section,
+.projects-section {
+    padding: 60px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Latar belakang semi-transparan */
+    z-index: 1;
+    /* Mencegah tertutup oleh background image */
+    position: relative;
+}
+
+/* Styling flip cards */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 300px;
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 20px;
+}
+
+/* Styling footer */
+.footer-section {
+    background-color: rgba(51, 51, 51, 0.9);
+    /* Background footer semi-transparan */
+    color: #fff;
+    padding: 40px 0;
+    z-index: 1;
+    position: relative;
+}
+
+.footer-section h5 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-section a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-section .social-media {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-section .social-media li {
+    margin-right: 15px;
+}
+
+.footer-section .newsletter-form input[type="email"] {
+    padding: 10px;
+    width: 70%;
+    border: none;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.footer-section .newsletter-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.footer-section .newsletter-form button:hover {
+    background-color: #0056b3;
+}
+
+.footer-section .text-center {
+    margin-top: 20px;
+}
